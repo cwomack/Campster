@@ -5,8 +5,6 @@ const tripSchema = new Schema ({
     name: {type: String, required: true},
     city: {type: String, default: 'Somewhere'},
     state: {type: String, default: 'Someplace'},
-    Date: {type: Date, default: 'Soon'},
-    lists: {type: Array, required: true}
 }, {
     timestamps: true
 });

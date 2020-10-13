@@ -1,6 +1,6 @@
 import React from 'react';
 import './MyTripPage.css';
-import TripListItem from '/..TripListItem/TripListItem';
+import TripListItem from '../TripListItem/TripListItem';
 
 function MyTripPage(props) {
     return (

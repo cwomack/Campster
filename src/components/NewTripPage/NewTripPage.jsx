@@ -7,8 +7,6 @@ class NewTripPage extends Component {
             name: "Bucket List Camping",
             city: "Grand Canyon",
             state: "AZ",
-            date: Date,
-            lists: [],
         },
     };
 
@@ -40,7 +38,7 @@ class NewTripPage extends Component {
                     onSubmit={this.handleSubmit}
                 >
                     <div className="form-group">
-                        <label>Trip Name (required)</label>
+                        <label>Trip Name</label>
                         <input
                             className="form-control"
                             name="name"
@@ -50,7 +48,7 @@ class NewTripPage extends Component {
                         />
                     </div>
                     <div className="form-group">
-                        <label>Destination City(required)</label>
+                        <label>Destination City</label>
                         <input
                             className="form-control"
                             name="city"
@@ -60,7 +58,7 @@ class NewTripPage extends Component {
                         />
                     </div>
                     <div className="form-group">
-                        <label>State</label>
+                        <label>Destination State</label>
                         <input
                             className="form-control"
                             name="state"
@@ -69,22 +67,11 @@ class NewTripPage extends Component {
                             required
                         />
                     </div>
-                    <div className="form-group">
-                        <label>Date</label>
-                        <input
-                            className="form-control"
-                            name="date"
-                            value={this.state.formData.date}
-                            onChange={this.handleChange}
-                            required
-                        />
-                    </div>
                     <button
                         type="submit"
                         className="btn"
                         disabled={this.state.invalidForm}
-                    >
-                        Add Trip
+                    >Add Trip
                     </button>
                 </form>
             </>
