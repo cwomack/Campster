@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function TripCard({ trip }) {
+function TripCard({trip}) {
     return (
         <div className="panel panel-default">
             <div className="panel-heading">
@@ -13,8 +13,6 @@ function TripCard({ trip }) {
                     <dd>{trip.city}</dd>
                     <dt>State</dt>
                     <dd>{trip.state}</dd>
-                    <dt>Date</dt>
-                    <dd>{trip.date}</dd>
                 </dl>
             </div>
             <div className="panel-footer">

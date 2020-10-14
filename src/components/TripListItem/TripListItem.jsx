@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import "./TripListItem.css";
 
 function TripListItem(props) {
@@ -13,7 +13,7 @@ function TripListItem(props) {
                     className="btn btn-xs btn-info"
                     to={{
                         pathname: "/details",
-                        state: { trip: props.trip },
+                        state: {trip: props.trip},
                     }}
                 >DETAILS</Link>
 
@@ -21,7 +21,7 @@ function TripListItem(props) {
                     className="btn btn-xs btn-warning"
                     to={{
                         pathname: "/edit",
-                        state: { trip: props.trip },
+                        state: {trip: props.trip},
                     }}
                 >EDIT</Link>
 

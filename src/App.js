@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
-import './App.css';
-import { Route, NavLink} from 'react-router-dom';
+import React, {Component} from "react";
+import "./App.css";
+import {Route, NavLink} from "react-router-dom";
 import * as tripAPI from "./services/trips-api";
-import MyTripPage from './components/MyTripPage/MyTripPage';
-import NewTripPage from './components/NewTripPage/NewTripPage';
-import TripDetailPage from './components/TripDetailPage/TripDetailPage';
-import EditTripPage from './components/EditTripPage/EditTripPage';
+import MyTripPage from "./components/MyTripPage/MyTripPage";
+import NewTripPage from "./components/NewTripPage/NewTripPage";
+import TripDetailPage from "./components/TripDetailPage/TripDetailPage";
+import EditTripPage from "./components/EditTripPage/EditTripPage";
 
 class App extends Component {
   state = {
@@ -23,7 +23,7 @@ class App extends Component {
       state=> ({
         trips: [...state.trips, newTrip],
       }),
-      () => this.props.history.push('/')
+      () => this.props.history.push("/")
     );
   };
 

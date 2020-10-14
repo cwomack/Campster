@@ -7,6 +7,7 @@ module.exports = {
     delete: deleteTrip,
     update
 };
+
 async function index(req, res) {
     const trips = await Trip.find({});
     res.status(200).json(trips);
@@ -24,6 +25,6 @@ async function deleteTrip(req, res) {
     res.status(200).json(deletedTrip);
 }
 async function update(req, res) {
-    const updatedTrip = await Trip.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const updatedTrip = await Trip.findByIdAndUpdate(req.params.id, req.body, {new: true});
     res.status(200).json(updatedTrip);
 }

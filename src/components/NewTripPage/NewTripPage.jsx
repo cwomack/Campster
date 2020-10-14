@@ -14,7 +14,7 @@ class NewTripPage extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        this.props.handleAddTrip(this.state.formData);
+        this.props.handleNewTrip(this.state.formData);
     };
 
     handleChange = e => {

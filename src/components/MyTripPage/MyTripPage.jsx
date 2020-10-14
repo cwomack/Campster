@@ -8,7 +8,7 @@ function MyTripPage(props) {
             <h1>My Trips</h1>
             <div className="MyTripPage-grid">
                 {props.trips.map(trip => (
-                    <TripListItem 
+                    <TripListItem
                         trip={trip} 
                         key={trip._id}
                         handleDeleteTrip={props.handleDeleteTrip}

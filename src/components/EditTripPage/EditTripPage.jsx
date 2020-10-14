@@ -11,13 +11,18 @@ class EditTripPage extends Component {
     formRef = React.createRef();
 
     handleSubmit = e => {
+        e.preventDefault();
+        this.props.handleUpdateTrip(this.state.formData);
+    };
+
+    handleChange = e => {
         const formData = {
             ...this.state.formData,
             [e.target.name]: e.target.value,
         };
         this.setState({
             formData,
-            invalidForm: !this.formRef.Ref.current.checkValidity(),
+            invalidForm: !this.formRef.current.checkValidity(),
         });
     };
 
@@ -31,55 +36,44 @@ class EditTripPage extends Component {
                     onSubmit={this.handleSubmit}
                 >
                     <div className="form-group">
-                        <label>Trip Name (required)</label>
+                        <label>Trip Name</label>
                         <input 
                             className="form-control" 
                             name="name"
                             value={this.state.formData.name}
                             onChange={this.handleChange}
-                            required
                         />
                     </div>
+
                     <div className="form-group">
-                        <label>City (required)</label>
+                        <label>City</label>
                         <input
                             className="form-control"
                             name="city"
                             value={this.state.formData.city}
                             onChange={this.handleChange}
-                            required
                         />
                     </div>
+
                     <div className="form-group">
-                        <label>State (required)</label>
+                        <label>State</label>
                         <input
                             className="form-control"
                             name="state"
                             value={this.state.formData.state}
                             onChange={this.handleChange}
-                            required
                         />
                     </div>
-                    <div className="form-group">
-                        <label>Date (required)</label>
-                        <input
-                            className="form-control"
-                            name="date"
-                            value={this.state.formData.date}
-                            onChange={this.handleChange}
-                            required
-                            type={Date}
-                        />
-                    </div>
+
                     <button
                         type="submit"
                         className="btn btn-xs"
                         disabled={this.state.invalidForm}
-                    >
-                        Save Trip Changes 
+                    >Save Trip Changes 
                     </button>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <Link to="/">CANCEL</Link>
+
+                    <Link to="/">Cancel Changes</Link>
                 </form>
             </>
         );
