@@ -65,7 +65,8 @@ class App extends Component {
         </header>
         <main>
           <Route
-            exact path="/"
+            exact 
+            path="/"
             render={() => (
               <MyTripPage 
                 trips={this.state.trips}
@@ -74,11 +75,13 @@ class App extends Component {
             )}
           />
           <Route
-            exact path="/add"
+            exact 
+            path="/add"
             render={() => <NewTripPage handleNewTrip={this.handleNewTrip} />}
           />
           <Route 
-          exact path="details"
+          exact 
+          path="/details"
           render={({location}) => <TripDetailPage location={location} />}
           />
           <Route 

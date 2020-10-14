@@ -1,4 +1,4 @@
-const Trip = require('../../models/trip');
+const Trip = require("../../models/trip");
 
 module.exports = {
     index,
