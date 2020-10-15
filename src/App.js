@@ -7,6 +7,7 @@ import NewTripPage from "./components/NewTripPage/NewTripPage";
 import TripDetailPage from "./components/TripDetailPage/TripDetailPage";
 import EditTripPage from "./components/EditTripPage/EditTripPage";
 
+
 class App extends Component {
   state = {
     trips: [],
