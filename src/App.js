@@ -1,17 +1,28 @@
 import React, {Component} from "react";
 import "./App.css";
-import {Route, NavLink} from "react-router-dom";
+import {Route, NavLink, Redirect} from "react-router-dom";
 import * as tripAPI from "./services/trips-api";
 import MyTripPage from "./components/MyTripPage/MyTripPage";
 import NewTripPage from "./components/NewTripPage/NewTripPage";
 import TripDetailPage from "./components/TripDetailPage/TripDetailPage";
 import EditTripPage from "./components/EditTripPage/EditTripPage";
-
+import SignupPage from "./pages/SignupPage/SignupPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import userService from "./utils/userService";
 
 class App extends Component {
   state = {
     trips: [],
   };
+
+  handleLogout = () => {
+    userService.logout();
+    this.setState({user: null});
+  }
+
+  handleSignupOrLogin = () => {
+    this.setState({user: userService.getUser()});
+  }
 
   async componentDidMount () {
     const trips = await tripAPI.getAll();
@@ -70,34 +81,50 @@ class App extends Component {
         </header>
         <main>
           <Route
-            exact 
-            path="/"
-            render={() => (
-              <MyTripPage 
-                trips={this.state.trips}
-                handleDeleteTrip={this.handleDeleteTrip}
-              />
+            exact path="/" render={() => (
+              userService.getUser() ?
+                <MyTripPage
+                  user={this.state.user} 
+                  trips={this.state.trips}
+                  handleDeleteTrip={this.handleDeleteTrip}
+                  handleLogout={this.handleLogout}
+                />
+                :
+                <Redirect to="/login" 
+                />
             )}
           />
           <Route
-            exact 
-            path="/add"
+            exact path="/add"
             render={() => <NewTripPage handleNewTrip={this.handleNewTrip} />}
           />
           <Route 
-          exact 
-          path="/details"
-          render={({location}) => <TripDetailPage location={location} />}
+            exact path="/details" 
+            render={({location}) => <TripDetailPage location={location} />}
           />
           <Route 
-            exact 
-            path="/edit"
-            render={({location}) => (
+            exact path="/edit" render={({location}) => (
               <EditTripPage
                 handleUpdateTrip={this.handleUpdateTrip}
                 location={location}
               />
             )}
+          />
+          <Route 
+            exact path="/signup" render={({history}) => (
+              <SignupPage
+                history={history}
+                handleSignupOrLogin={this.handleSignupOrLogin}
+              />
+            )} 
+          />
+          <Route 
+            exact path="/login" render={({history}) => (
+              <LoginPage
+                handleSignupOrLogin={this.handleSignupOrLogin}
+                history={history}
+              />
+            )} 
           />
         </main>
       </div>
