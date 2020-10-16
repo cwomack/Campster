@@ -1,8 +1,8 @@
-const express = require('express');
-const path = require('path');
-const favicon = require('serve-favicon');
-const logger = require('morgan');
 const cors = require("cors");
+const express = require("express");
+const path = require("path");
+const favicon = require("serve-favicon");
+const logger = require("morgan");
 const app = express();
 
 require('dotenv').config();
@@ -21,6 +21,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 // ---------------------API Routes Below -------------------
 app.use('/api/trips', tripsRouter);
 app.use('/api/users', require('./routes/api/users'));
+app.use('/api/camps', require('./routes/api/camps'));
 app.use(require('./config/auth'));
 
 
