@@ -11,9 +11,14 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import userService from "./utils/userService";
 
 class App extends Component {
-  state = {
-    trips: [],
-  };
+  
+  constructor() {
+    super();
+    this.state = {
+      trips: [],
+      user: userService.getUser(),
+    };
+  }
 
   handleLogout = () => {
     userService.logout();
@@ -70,12 +75,20 @@ class App extends Component {
         <header className="App-header">
           Welcome to Campster!
           <nav>
-            <NavLink exact to="/">
+            <NavLink user={this.props.user}exact to="/">
               My Trips
             </NavLink>
             &nbsp;&nbsp;&nbsp;
             <NavLink exact to="/add">
               New Trip
+            </NavLink>
+            &nbsp;&nbsp;&nbsp;
+            <NavLink exact to="/signup">
+              Create Profile
+            </NavLink>
+            &nbsp;&nbsp;&nbsp;
+            <NavLink exact to="/login">
+              Login
             </NavLink>
           </nav>
         </header>
@@ -84,13 +97,13 @@ class App extends Component {
             exact path="/" render={() => (
               userService.getUser() ?
                 <MyTripPage
-                  user={this.state.user} 
                   trips={this.state.trips}
+                  user={this.state.user} 
                   handleDeleteTrip={this.handleDeleteTrip}
                   handleLogout={this.handleLogout}
                 />
                 :
-                <Redirect to="/login" 
+                <Redirect to="/login"
                 />
             )}
           />
