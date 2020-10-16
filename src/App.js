@@ -9,6 +9,7 @@ import EditTripPage from "./components/EditTripPage/EditTripPage";
 import SignupPage from "./pages/SignupPage/SignupPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import userService from "./utils/userService";
+import SearchPage from "./pages/SearchPage/SearchPage";
 
 class App extends Component {
   
@@ -83,13 +84,23 @@ class App extends Component {
               New Trip
             </NavLink>
             &nbsp;&nbsp;&nbsp;
+            <NavLink exact to="/search">
+              Search Camps
+            </NavLink>
+            &nbsp;&nbsp;&nbsp;
             <NavLink exact to="/signup">
               Create Profile
             </NavLink>
             &nbsp;&nbsp;&nbsp;
-            <NavLink exact to="/login">
-              Login
-            </NavLink>
+            {this.state.user ? (
+              <NavLink exact to="/login" onClick={this.handleLogout}>
+                Logout
+              </NavLink>
+            ) : (
+              <NavLink exact to="/login">
+                Login
+              </NavLink>
+            )}
           </nav>
         </header>
         <main>
@@ -116,6 +127,10 @@ class App extends Component {
             render={({location}) => <TripDetailPage location={location} />}
           />
           <Route 
+            exact path="/search" 
+            render={({location}) => <SearchPage location={location} />}
+          />
+          <Route 
             exact path="/edit" render={({location}) => (
               <EditTripPage
                 handleUpdateTrip={this.handleUpdateTrip}
@@ -135,6 +150,14 @@ class App extends Component {
             exact path="/login" render={({history}) => (
               <LoginPage
                 handleSignupOrLogin={this.handleSignupOrLogin}
+                history={history}
+              />
+            )} 
+          />
+          <Route 
+            exact path="/logout" render={({history}) => (
+              <LoginPage
+                handleLogout={this.handleLogout}
                 history={history}
               />
             )} 
