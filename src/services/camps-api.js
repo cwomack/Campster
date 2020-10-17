@@ -5,10 +5,10 @@ export default {getAll};
 
 export function getAll() {
     const options = {
-        method: 'GET',
+        method: "GET",
         headers: {
-            'Content-type': 'application/json',
-            'APIKey': APIKey
+            "Content-type": "application/json",
+            "APIKey": APIKey
         },
     };
     return fetch(`${BASE_URL}/search`, options).then(res => res.json());

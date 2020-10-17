@@ -7,7 +7,7 @@ module.exports = {searchCamps};
 function searchCamps(req, res) {
     axios({url: `https://ridb.recreation.gov/api/v1/campsites/2?APIKey=${APIKey}`,
     headers: {APIKey: APIKey},
-    method: 'GET'
+    method: "GET"
 })
         .then(function (response) {
             // handle success
