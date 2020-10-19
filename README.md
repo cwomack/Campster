@@ -45,7 +45,6 @@ Current state is a full suite of user-CRUD to simply make trips in a MERN-stack 
 * [Trello](https://trello.com/b/ADwPwWbO/campster) for organization of productivity flow
 * [Heroku](https://campster-sei.herokuapp.com/) to create link to the app for deployment
 * [GitHub](https://github.com/WomackCodes/campster) for repositories and storage of data
-* [OpenBreweryDB](https://www.openbrewerydb.org/) API for 3rd party data on breweries
 * [GoogleMaps](https://cloud.google.com/maps-platform/maps) for map and location data
 
 ### Icebox - Future Improvements: 
