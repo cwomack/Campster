@@ -34,10 +34,14 @@ class App extends Component {
     const trips = await tripAPI.getAll();
     this.setState({trips});
   }
+  // async componentDidMount () {
+  //   const trips = await tripAPI.getAll(userService.getUser());
+  //   this.setState({trips});
+  //   console.log(trips);
+  // }
 
   handleNewTrip = async newTripData => {
     const newTrip = await tripAPI.create(newTripData);
-    
     this.setState(
       state=> ({
         trips: [...state.trips, newTrip],
@@ -119,6 +123,17 @@ class App extends Component {
                 />
             )}
           />
+          {/* <Route path='/users/:id' render={(props) => (
+              userService.getUser() ?
+                <MyTripPage 
+                  trips={this.state.user.trips}
+                  user={this.state.user} 
+                  handleDeleteTrip={this.handleDeleteTrip}
+                  handleLogout={this.handleLogout}
+                />
+              :
+                <Redirect to='/login' />
+            )}/> */}
           <Route
             exact path="/add"
             render={() => <NewTripPage user={this.state.user} handleNewTrip={this.handleNewTrip} />}

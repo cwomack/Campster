@@ -5,7 +5,8 @@ const SECRET = process.env.SECRET;
 
 module.exports = {
     signup,
-    login
+    login,
+    // show
 };
 
 async function login(req, res) {
@@ -37,6 +38,12 @@ async function signup(req, res) {
         res.status(400).json(err);
     }
 }
+
+// async function show(req, res) {
+//     const user = await User.findById(req.params.id);
+//     console.log({user}, "THIS CONSOLE LOG FIRED");
+//     res.status(200).json(user);
+// }
 
 /*--- Helper Functions ---*/
 

@@ -13,10 +13,12 @@ async function index(req, res) {
     const trips = await Trip.find({});
     res.status(200).json(trips);
 }
+
 async function show(req, res) {
     const trip = await Trip.findById(req.params.id);
     res.status(200).json(trip);
 }
+
 async function create(req, res) {
     const trip = await Trip.create(req.body);
     const updatedUser = await User.findByIdAndUpdate(req.body.user).then(function(user) {
@@ -25,8 +27,8 @@ async function create(req, res) {
         return user;
     });
     res.status(201).json(trip);
-
 }
+
 async function deleteTrip(req, res) {
     const deletedTrip = await Trip.findByIdAndRemove(req.params.id);
     res.status(200).json(deletedTrip);

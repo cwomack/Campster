@@ -1,68 +1,59 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Campster - Make a new Camping or road trip!
 
-## Available Scripts
 
-In the project directory, you can run:
+### Campster is a full stack web application that allows logged in users the ability to create trips and will soon get location data, campgrounds, weather, and moon phases to help users make their next camping/road trip perfect!
 
-### `npm start`
+Heroku link to app: (https://campster-sei.herokuapp.com/)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### _What the app looks like:_
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Example index page for trips made:
+<img src="https://i.imgur.com/JESBYsO.png" width="400">
 
-### `npm test`
+"Details" page to update existing trips:
+<img src="https://i.imgur.com/oqwIFm5.png" width="400">
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### _Getting started:_
 
-### `npm run build`
+This app is still a work in progress and is currently being overhaualed to remove class based components and replace them with hooks and functional components.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Once all icebox items have been implemented there will be a redesign of the websites look to be more dynamiv, consume 3rd party API's to get real time weather and sky reports, and allow for communications between linked users to a trip for text messaging via Twilio. 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Current state is a full suite of user-CRUD to simply make trips in a MERN-stack browser app with authentation/authorization features for logged in users. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### _Technologies Used:_ 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* MongoDB
+* Express
+* React
+* Node.js
+* HTML5
+* Bootstrap/CSS
+* Mongoose 
+* Heroku (for deployment of app)
+* Git VCS
+* 3rd party API's for 
+    * Google Maps API for location data via iFrame
+    * Federal Government database of all recreational facilities
+    * OpenWeather for real time weather data
+    * Twilio for real time text messages to be sent
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### _Resources Used:_
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* [Trello](https://trello.com/b/ADwPwWbO/campster) for organization of productivity flow
+* [Heroku](https://campster-sei.herokuapp.com/) to create link to the app for deployment
+* [GitHub](https://github.com/WomackCodes/campster) for repositories and storage of data
+* [OpenBreweryDB](https://www.openbrewerydb.org/) API for 3rd party data on breweries
+* [GoogleMaps](https://cloud.google.com/maps-platform/maps) for map and location data
 
-## Learn More
+### Icebox - Future Improvements: 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* API's to provide the data resources to plan a trip better
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Uploading of photos taken on trips 
 
-### Code Splitting
+* Rating for campgrounds to develop my own API that can be leveraged
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* Creation of badges or awards for users who log in and tag campsites or see the great outdoors
