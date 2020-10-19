@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 
 class NewTripPage extends Component {
     state = {
@@ -7,6 +7,7 @@ class NewTripPage extends Component {
             name: "Bucket List Camping",
             city: "Grand Canyon",
             state: "AZ",
+            user: this.props.user._id
         },
     };
 

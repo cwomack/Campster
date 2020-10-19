@@ -37,6 +37,7 @@ class App extends Component {
 
   handleNewTrip = async newTripData => {
     const newTrip = await tripAPI.create(newTripData);
+    
     this.setState(
       state=> ({
         trips: [...state.trips, newTrip],
@@ -120,7 +121,7 @@ class App extends Component {
           />
           <Route
             exact path="/add"
-            render={() => <NewTripPage handleNewTrip={this.handleNewTrip} />}
+            render={() => <NewTripPage user={this.state.user} handleNewTrip={this.handleNewTrip} />}
           />
           <Route 
             exact path="/details" 

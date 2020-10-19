@@ -1,4 +1,5 @@
 const Trip = require("../../models/trip");
+const User = require("../../models/user");
 
 module.exports = {
     index,
@@ -18,7 +19,13 @@ async function show(req, res) {
 }
 async function create(req, res) {
     const trip = await Trip.create(req.body);
+    const updatedUser = await User.findByIdAndUpdate(req.body.user).then(function(user) {
+        user.trips = [...user.trips, trip];
+        user.save();
+        return user;
+    });
     res.status(201).json(trip);
+
 }
 async function deleteTrip(req, res) {
     const deletedTrip = await Trip.findByIdAndRemove(req.params.id);
