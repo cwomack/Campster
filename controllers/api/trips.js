@@ -21,11 +21,11 @@ async function show(req, res) {
 
 async function create(req, res) {
     const trip = await Trip.create(req.body);
-    const updatedUser = await User.findByIdAndUpdate(req.body.user).then(function(user) {
-        user.trips = [...user.trips, trip];
-        user.save();
-        return user;
-    });
+    // const updatedUser = await User.findByIdAndUpdate(req.body.user).then(function(user) {
+    //     user.trips = [...user.trips, trip];
+    //     user.save();
+    //     return user;
+    // });
     res.status(201).json(trip);
 }
 

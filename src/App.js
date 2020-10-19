@@ -23,15 +23,18 @@ class App extends Component {
 
   handleLogout = () => {
     userService.logout();
-    this.setState({user: null});
+    this.setState({user: null, trips: []});
   }
 
   handleSignupOrLogin = () => {
-    this.setState({user: userService.getUser()});
+    this.setState({user: userService.getUser()}, () => this.getTrips());
   }
 
-  async componentDidMount () {
-    const trips = await tripAPI.getAll();
+  async getTrips () {
+    let trips = await tripAPI.getAll();
+    if (this.state.user) {
+      trips = trips.filter((t) => t.user === this.state.user._id);
+    }
     this.setState({trips});
   }
   // async componentDidMount () {
