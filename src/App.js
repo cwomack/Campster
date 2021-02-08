@@ -82,7 +82,7 @@ class App extends Component {
     return(
       <div className="App">
         <header className="App-header">
-          Welcome to Campster!
+          Make your next trip unforgettable. 
           <nav>
             <NavLink user={this.props.user}exact to="/">
               My Trips
