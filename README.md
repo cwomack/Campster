@@ -56,3 +56,5 @@ Current state is a full suite of user-CRUD to simply make trips in a MERN-stack 
 * Rating for campgrounds to develop my own API that can be leveraged
 
 * Creation of badges or awards for users who log in and tag campsites or see the great outdoors
+
+* Reconfigure components
